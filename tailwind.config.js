@@ -15,7 +15,7 @@ export default {
       },
 
       backgroundImage: {
-        "hero-bg": "url(./src/img/hero-background-color.png)",
+        "hero-bg": "url('/img/hero-background-color.png')",
       },
 
       colors: {

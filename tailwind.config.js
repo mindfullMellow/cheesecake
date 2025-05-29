@@ -12,6 +12,7 @@ export default {
         inter: ["inter", "sans-serif"],
         inika: ["inika", "sans-serif"],
         Roboto: ["Roboto", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
 
       backgroundImage: {

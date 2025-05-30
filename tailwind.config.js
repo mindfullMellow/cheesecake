@@ -13,6 +13,7 @@ export default {
         inika: ["inika", "sans-serif"],
         Roboto: ["Roboto", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        Recursive: ["Recursive", "sans-serif"],
       },
 
       backgroundImage: {

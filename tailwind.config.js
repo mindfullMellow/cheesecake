@@ -14,6 +14,7 @@ export default {
         Roboto: ["Roboto", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         Recursive: ["Recursive", "sans-serif"],
+        outfit: ["outfit", "sans-serif"],
       },
 
       backgroundImage: {

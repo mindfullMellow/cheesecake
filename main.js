@@ -42,7 +42,7 @@ console.log(sectionHeroEl);
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
-    console.log(ent);
+    // console.log(ent);
 
     if (ent.isIntersecting === false) {
       document.body.classList.add("sticky");
@@ -62,3 +62,18 @@ const obs = new IntersectionObserver(
 );
 
 obs.observe(sectionHeroEl);
+//////////////////////////
+// function to convert hex to rgb
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+const sections = document.querySelectorAll("section");
+const targetColor1 = hexToRgb("#fff8e1");
+const targetColor2 = hexToRgb("#59372e");
+const nav = document.querySelector(".nav");
+
+console.log(targetColor2, targetColor1);

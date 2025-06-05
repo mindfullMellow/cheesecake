@@ -6,7 +6,9 @@
   transform: translateX(-50%);
   width: auto;
   height: 45px;
+  background-color: rgb(89, 55, 46, 0.8);
   padding-top: 0;
+  border: 1px solid rgb(255, 248, 225, 0.8);
   padding-bottom: 0;
 
   z-index: 999;

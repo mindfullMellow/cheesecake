@@ -1,4 +1,5 @@
 "use strict";
+import { root } from "postcss";
 import "tailwindcss/tailwind.css";
 
 // get current year
@@ -32,3 +33,32 @@ allLinks.forEach(function (link) {
     if (link.classList.contains("item")) headerEl.classList.toggle("nav-open");
   });
 });
+
+///////////////////////////////////////////////////////////
+// Sticky navigation
+const sectionHeroEl = document.querySelector(".section-hero");
+console.log(sectionHeroEl);
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+
+    if (ent.isIntersecting === false) {
+      document.body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting === true) {
+      document.body.classList.remove("sticky");
+    }
+  },
+
+  {
+    // in the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+
+obs.observe(sectionHeroEl);

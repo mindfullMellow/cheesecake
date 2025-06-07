@@ -93,7 +93,8 @@ btnShowModal.addEventListener("click", (e) => {
   }
 
   modal.classList.remove("hidden");
-  nav.classList.remove("sticky");
+  overlay.classList.remove("hidden");
+  document.body.classList.remove("sticky");
 });
 
 btnCloseModal.addEventListener("click", closeModal);

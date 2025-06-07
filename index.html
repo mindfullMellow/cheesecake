@@ -18,14 +18,14 @@
   <title>CheeseCake</title>
 </head>
 
-<body>
+<body class="relative">
   <header class="bg-center bg-cover bg-hero-bg section-hero">
     <div class="container px-6 lg:px-0 max-w-[1200px] mx-auto">
       <!-- nav section -->
       <div class="flex items-center justify-between">
         <img src="./img/logo-of-the-chesscake.png" alt="Brand logo" class="w-28 h-2w-28">
         <nav
-          class="hidden space-x-4 text-sm font-medium tracking-wider rounded-lg nav lg:flex font-inter text-cheese-brown-50 bg-cheese-brown-800 ">
+          class="space-x-4 text-sm font-medium tracking-wider rounded-lg nav lg:flex font-inter text-cheese-brown-50 bg-cheese-brown-800">
           <a href="#"
             class="px-6 py-3 transition duration-300 rounded-lg hover:bg-cheese-brown-50 hover:text-cheese-brown-800">Home</a>
           <a href="#About"
@@ -269,18 +269,18 @@
         </div>
 
 
-        <div class="flex flex-col items-end flex-1 gap-6 font-inter">
+        <form class="flex flex-col items-end flex-1 gap-6 font-inter">
           <input type="text" placeholder="Name"
-            class="w-3/4 p-3 rounded-full shadow-2xl placeholder:text-gray-500 placeholder:text-xl">
+            class="w-3/4 p-3 rounded-full shadow-2xl placeholder:text-gray-500 placeholder:text-xl" required>
           <input type="email" placeholder="Email"
-            class="w-3/4 p-3 rounded-full shadow-2xl placeholder:text-gray-500 placeholder:text-xl">
+            class="w-3/4 p-3 rounded-full shadow-2xl placeholder:text-gray-500 placeholder:text-xl" required>
           <input type="text" placeholder="Your Message..."
-            class="w-3/4 p-4 shadow-2xl rounded-2xl placeholder:text-gray-500 placeholder:text-xl pb-36">
+            class="w-3/4 p-4 shadow-2xl rounded-2xl placeholder:text-gray-500 placeholder:text-xl pb-36" required>
           <button
-            class="inline-block w-3/4 p-4 text-2xl rounded-full shadow-2xl font-inter bg-cheese-cream-500 hover:opacity-80">Contact
+            class="inline-block w-3/4 p-4 text-2xl rounded-full shadow-2xl font-inter bg-cheese-cream-500 hover:opacity-80 show-modal">Contact
             Us
             Now</button>
-        </div>
+        </form>
 
 
 
@@ -289,38 +289,58 @@
       </div>
     </section>
 
-    <footer class="py-3 bg-cheese-brown-900">
-      <div class="container mx-auto px-6 lg:px-0 max-w-[1200px]">
-
-        <div class="flex flex-col items-center justify-center space-y-2">
-
-          <!-- icons div -->
-          <div class="flex items-center justify-center gap-6 ">
-            <a href="#" class="text-3xl text-cheese-cream-400"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="#" class="text-3xl text-cheese-cream-50"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#" class="text-3xl text-cheese-cream-50"><ion-icon name="logo-youtube"></ion-icon></a>
-            <a href="#" class="text-3xl text-cheese-cream-50"><ion-icon name="logo-twitter"></ion-icon></a>
-          </div>
-
-          <p class="text-lg font-medium font-inter text-cheese-brown-100">Copyright &copy; <span id="year"></span> | All
-            Rights Reserved</p>
-        </div>
-
-
-        <div class="flex items-center justify-center gap-16 pt-10 text-sm font-inter text-cheese-cream-50">
-          <p>Created by: <a href="https://github.com/mindfullMellow"
-              class="underline transition duration-300 text-cheese-brown-50 hover:text-cheese-brown-300">Daniel
-              Samuel Emeka</a></p>
-          <p>Designed by: <a href="https://x.com/AmenaiSabuwala"
-              class="underline transition duration-300 text-cheese-brown-50 hover:text-cheese-brown-300">@AmenaiSabuwala</a>
-          </p>
-        </div>
-
-
-      </div>
-    </footer>
-
   </main>
+
+
+  <footer class="py-3 bg-cheese-brown-900">
+    <div class="container mx-auto px-6 lg:px-0 max-w-[1200px]">
+
+      <div class="flex flex-col items-center justify-center space-y-2">
+
+        <!-- icons div -->
+        <div class="flex items-center justify-center gap-6 ">
+          <a href="#" class="text-3xl text-cheese-cream-400"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#" class="text-3xl text-cheese-cream-50"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#" class="text-3xl text-cheese-cream-50"><ion-icon name="logo-youtube"></ion-icon></a>
+          <a href="#" class="text-3xl text-cheese-cream-50"><ion-icon name="logo-twitter"></ion-icon></a>
+        </div>
+
+        <p class="text-lg font-medium font-inter text-cheese-brown-100">Copyright &copy; <span id="year"></span> | All
+          Rights Reserved</p>
+      </div>
+
+
+      <div class="flex items-center justify-center gap-16 pt-10 text-sm font-inter text-cheese-cream-50">
+        <p>Created by: <a href="https://github.com/mindfullMellow"
+            class="underline transition duration-300 text-cheese-brown-50 hover:text-cheese-brown-300">Daniel
+            Samuel Emeka</a></p>
+        <p>Designed by: <a href="https://x.com/AmenaiSabuwala"
+            class="underline transition duration-300 text-cheese-brown-50 hover:text-cheese-brown-300">@AmenaiSabuwala</a>
+        </p>
+      </div>
+
+
+    </div>
+  </footer>
+
+  <!-- modal feature -->
+  <div class="hidden overlay"></div>
+
+  <div class="hidden modal">
+    <div class="flex flex-col items-center justify-center gap-5 py-9 px-9">
+      <div><ion-icon name="checkmark-done-outline"
+          class="w-4 h-4 p-3 text-base rounded-full bg-cheese-cream-500 text-cheese-cream-50"></ion-icon>
+      </div>
+
+      <div class="text-base font-bold text-center font-inter text-cheese-brown-950">
+        <p>Thanks for reaching out!</p>
+        <p>We'll get back to you shortly.</p>
+      </div>
+
+      <button class="close-modal text-cheese-brown-950 opacity-80">&times;</button>
+
+    </div>
+  </div>
 
   <script type="module" src="/main.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

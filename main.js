@@ -62,18 +62,48 @@ const obs = new IntersectionObserver(
 );
 
 obs.observe(sectionHeroEl);
-//////////////////////////
-// function to convert hex to rgb
-function hexToRgb(hex) {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return `rgb(${r}, ${g}, ${b})`;
-}
 
-const sections = document.querySelectorAll("section");
-const targetColor1 = hexToRgb("#fff8e1");
-const targetColor2 = hexToRgb("#59372e");
-const nav = document.querySelector(".nav");
+/////////////////////////////////////////
+//implementing the modal window with DOM
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnShowModal = document.querySelector(".show-modal");
+const btnCloseModal = document.querySelector(".close-modal");
+const form = document.querySelector("form");
+const input = form.querySelector("input");
 
-console.log(targetColor2, targetColor1);
+//creating functions to maintain the dry principle
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  document.body.classList.add("sticky");
+  location.reload();
+};
+
+// using the functions created earlier
+btnShowModal.addEventListener("click", (e) => {
+  // stop form submission
+  e.preventDefault();
+
+  //make sure the form is filled first
+  if (input.value.trim() === "") {
+    alert("Please fill the form first!");
+    return;
+  }
+
+  modal.classList.remove("hidden");
+  nav.classList.remove("sticky");
+});
+
+btnCloseModal.addEventListener("click", closeModal);
+
+///////////////////////////////////////
+//adding akeyboard event
+document.addEventListener("keydown", function (event) {
+  console.log(event.key);
+
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});

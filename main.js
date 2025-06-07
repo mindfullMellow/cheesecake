@@ -69,26 +69,30 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnShowModal = document.querySelector(".show-modal");
 const btnCloseModal = document.querySelector(".close-modal");
-const nav = document.querySelector(".nav");
+const nav = document.querySelector("nav");
+console.log(nav);
 
 //creating functions to maintain the dry principle
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  document.body.classList.remove("sticky");
 };
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  document.body.classList.add("sticky");
 };
 
 // using the functions created earlier
 btnShowModal.addEventListener("click", openModal);
 btnCloseModal.addEventListener("click", closeModal);
 
-if (
-  !modal.classList.contains("hidden") &&
-  !overlay.classList.contains("hidden") &&
-  nav.classList.contains("sticky")
-) {
-  nav.classList.toggle("sticky");
-}
+//adding akeyboard event
+document.addEventListener("keydown", function (event) {
+  console.log(event.key);
+
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});

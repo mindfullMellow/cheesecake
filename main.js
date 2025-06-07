@@ -62,3 +62,33 @@ const obs = new IntersectionObserver(
 );
 
 obs.observe(sectionHeroEl);
+
+/////////////////////////////////////////
+//implementing the modal window with DOM
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnShowModal = document.querySelector(".show-modal");
+const btnCloseModal = document.querySelector(".close-modal");
+const nav = document.querySelector(".nav");
+
+//creating functions to maintain the dry principle
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+// using the functions created earlier
+btnShowModal.addEventListener("click", openModal);
+btnCloseModal.addEventListener("click", closeModal);
+
+if (
+  !modal.classList.contains("hidden") &&
+  !overlay.classList.contains("hidden") &&
+  nav.classList.contains("sticky")
+) {
+  nav.classList.toggle("sticky");
+}

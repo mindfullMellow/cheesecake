@@ -69,25 +69,36 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnShowModal = document.querySelector(".show-modal");
 const btnCloseModal = document.querySelector(".close-modal");
-const nav = document.querySelector("nav");
-console.log(nav);
+const form = document.querySelector("form");
+const input = form.querySelector("input");
 
 //creating functions to maintain the dry principle
-const openModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-  document.body.classList.remove("sticky");
-};
+
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
   document.body.classList.add("sticky");
+  location.reload();
 };
 
 // using the functions created earlier
-btnShowModal.addEventListener("click", openModal);
+btnShowModal.addEventListener("click", (e) => {
+  // stop form submission
+  e.preventDefault();
+
+  //make sure the form is filled first
+  if (input.value.trim() === "") {
+    alert("Please fill the form first!");
+    return;
+  }
+
+  modal.classList.remove("hidden");
+  nav.classList.remove("sticky");
+});
+
 btnCloseModal.addEventListener("click", closeModal);
 
+///////////////////////////////////////
 //adding akeyboard event
 document.addEventListener("keydown", function (event) {
   console.log(event.key);

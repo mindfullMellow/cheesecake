@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="apple-touch-icon" sizes="180x180" href="public/img/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="public/img/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="public/img/favicon_io/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon_io/site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -326,7 +326,8 @@
   <!-- modal feature -->
   <div class="hidden overlay"></div>
 
-  <div class="hidden modal">
+  <!-- modal1 (correct-modal)-->
+  <div class="hidden correct-modal">
     <div class="flex flex-col items-center justify-center gap-5 py-9 px-9">
       <div><ion-icon name="checkmark-done-outline"
           class="w-4 h-4 p-3 text-base rounded-full bg-cheese-cream-500 text-cheese-cream-50"></ion-icon>
@@ -342,9 +343,29 @@
     </div>
   </div>
 
+  <!-- modal 2 (error-modal)-->
+  <div class="hidden error-modal">
+    <div class="flex flex-col items-center justify-center gap-2 px-4 py-6">
+      <div><ion-icon name="alert-outline"
+          class="w-4 h-4 p-3 text-2xl bg-red-600 rounded-full text-cheese-cream-50"></ion-icon>
+      </div>
+
+      <div class="text-base font-bold text-center font-inter text-cheese-brown-950">
+        <p>Please fill the form first!</p>
+      </div>
+    </div>
+  </div>
+
+
+
   <script type="module" src="/main.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
+
+<!-- 
+add the second modal for control flow
+reroute the data from the from to netlify
+-->

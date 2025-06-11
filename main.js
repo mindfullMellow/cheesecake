@@ -65,23 +65,17 @@ obs.observe(sectionHeroEl);
 
 /////////////////////////////////////////
 //implementing the modal window with DOM
-const modal = document.querySelector(".modal");
+// const modal = document.querySelectorAll(".modal");
+const correctModal = document.querySelector(".correct-modal");
 const overlay = document.querySelector(".overlay");
 const btnShowModal = document.querySelector(".show-modal");
 const btnCloseModal = document.querySelector(".close-modal");
 const form = document.querySelector("form");
 const input = form.querySelector("input");
 
-//creating functions to maintain the dry principle
-
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-  document.body.classList.add("sticky");
-  location.reload();
-};
-
-// using the functions created earlier
+//////////////////////////////////////
+//1ST MODAL (correct-Modal)
+// show the correct-modal if a certain condition is filled
 btnShowModal.addEventListener("click", (e) => {
   // stop form submission
   e.preventDefault();
@@ -92,19 +86,25 @@ btnShowModal.addEventListener("click", (e) => {
     return;
   }
 
-  modal.classList.remove("hidden");
+  correctModal.classList.remove("hidden");
   overlay.classList.remove("hidden");
   document.body.classList.remove("sticky");
 });
 
-btnCloseModal.addEventListener("click", closeModal);
+//close/ remove the correct modal
+btnCloseModal.addEventListener("click", function () {
+  correctModal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  document.body.classList.add("sticky");
+  location.reload();
+});
 
 ///////////////////////////////////////
 //adding akeyboard event
 document.addEventListener("keydown", function (event) {
   console.log(event.key);
 
-  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+  if (event.key === "Escape" && !correctModal.classList.contains("hidden")) {
     closeModal();
   }
 });

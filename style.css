@@ -31,7 +31,7 @@
   z-index: 5;
 }
 
-.modal {
+.correct-modal {
   position: absolute;
   top: 89%;
   left: 50%;
@@ -40,7 +40,20 @@
   z-index: 10;
   background-color: #fff8e1;
   border-radius: 16px;
-  /* background: #f49500; */
+
+
+}
+
+.error-modal {
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  z-index: 10;
+  background-color: #fff8e1;
+  border-radius: 16px;
+
 
 }
 

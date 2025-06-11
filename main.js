@@ -65,13 +65,22 @@ obs.observe(sectionHeroEl);
 
 /////////////////////////////////////////
 //implementing the modal window with DOM
-// const modal = document.querySelectorAll(".modal");
+const errorModal = document.querySelector(".error-modal");
+const modalContent = document.querySelector(".error-modal .modal-content");
 const correctModal = document.querySelector(".correct-modal");
 const overlay = document.querySelector(".overlay");
 const btnShowModal = document.querySelector(".show-modal");
 const btnCloseModal = document.querySelector(".close-modal");
+const btnCloseError = document.querySelector(".error-close-modal");
 const form = document.querySelector("form");
 const input = form.querySelector("input");
+
+//storing functions
+function closeModal(modal) {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  document.body.classList.add("sticky");
+}
 
 //////////////////////////////////////
 //1ST MODAL (correct-Modal)
@@ -82,29 +91,39 @@ btnShowModal.addEventListener("click", (e) => {
 
   //make sure the form is filled first
   if (input.value.trim() === "") {
-    alert("Please fill the form first!");
+    errorModal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    document.body.classList.remove("sticky");
     return;
+  } else {
+    correctModal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    document.body.classList.remove("sticky");
   }
-
-  correctModal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-  document.body.classList.remove("sticky");
 });
 
 //close/ remove the correct modal
 btnCloseModal.addEventListener("click", function () {
-  correctModal.classList.add("hidden");
-  overlay.classList.add("hidden");
-  document.body.classList.add("sticky");
+  closeModal(correctModal);
   location.reload();
+});
+
+// close / remove the error modal
+btnCloseError.addEventListener("click", function () {
+  closeModal(errorModal);
 });
 
 ///////////////////////////////////////
 //adding akeyboard event
 document.addEventListener("keydown", function (event) {
-  console.log(event.key);
-
   if (event.key === "Escape" && !correctModal.classList.contains("hidden")) {
-    closeModal();
+    closeModal(correctModal);
+    location.reload();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && !errorModal.classList.contains("hidden")) {
+    closeModal(errorModal);
   }
 });

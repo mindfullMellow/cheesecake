@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   purge: ["index.html"],
-  darkMode: false,
-  content: ["./*.html", "./*.js"],
+  media: false,
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     //overriding all  defualt styles
 

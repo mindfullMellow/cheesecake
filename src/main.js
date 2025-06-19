@@ -1,6 +1,7 @@
 "use strict";
 import { root } from "postcss";
 import "tailwindcss/tailwind.css";
+import "./style.css";
 
 // get current year
 const currentYear = new Date().getFullYear();

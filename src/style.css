@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* STICKY NAVIGATION */
 .sticky .nav {
   position: fixed;

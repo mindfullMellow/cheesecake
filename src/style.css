@@ -119,12 +119,12 @@
     width: 100%;
     height: 100vh;
     transform: translateX(100%);
-    border-radius: none;
+    border-radius: none !important;
 
     flex-direction: column;
-    gap: 24px;
-    font-weight: 800;
-    font-size: 18px;
+    gap: 24px !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
     transition: all 0.5s ease-in;
 
     /* HIDING THE NAV */

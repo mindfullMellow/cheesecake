@@ -82,3 +82,86 @@
   border: none;
   background: none;
 }
+
+/* mobile navigation */
+.cta-nav {
+  display: none;
+}
+
+.btn-mobile-nav {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 35px;
+  width: 35px;
+  color: #6f4436;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* CUSTOM MEDIA QUERIES */
+@media (max-width: 990px) {
+  /* MOBILE NAVIGATION */
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 248, 225, 0.98);
+    color: #6f4436;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    flex-direction: column;
+    gap: 24px;
+    font-weight: 800;
+    font-size: 18px;
+    transition: all 0.5s ease-in;
+
+    /* HIDING THE NAV */
+    /*1) hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .cta-nav {
+    display: block;
+  }
+
+  .lg-nav {
+    display: none;
+  }
+
+}

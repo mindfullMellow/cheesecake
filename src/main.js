@@ -10,7 +10,7 @@ year.textContent = currentYear;
 
 /////////////////////////////////////
 // Smooth scrolling animation
-const allLinks = document.querySelectorAll("a");
+const allLinks = document.querySelectorAll("a:link");
 
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
@@ -31,7 +31,8 @@ allLinks.forEach(function (link) {
     }
 
     // Close mobile navigation
-    if (link.classList.contains("item")) headerEl.classList.toggle("nav-open");
+    if (link.classList.contains("item"))
+      NavHeaderEl.classList.toggle("nav-open");
   });
 });
 
@@ -129,8 +130,11 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-///////////////////////////////////////
-//Qureies Code
-// if (window.innerWidth >= 990) {
-//   document.querySelectorAll("br").forEach((br) => br.remove());
-// }
+////////////////////////////////////////////////////////////////
+//Make mobile Navigation work
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const NavHeaderEl = document.querySelector(".nav-header");
+
+btnNavEl.addEventListener("click", function () {
+  NavHeaderEl.classList.toggle("nav-open");
+});

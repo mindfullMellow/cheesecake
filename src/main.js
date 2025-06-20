@@ -128,3 +128,9 @@ document.addEventListener("keydown", function (event) {
     closeModal(errorModal);
   }
 });
+
+///////////////////////////////////////
+//Qureies Code
+// if (window.innerWidth >= 990) {
+//   document.querySelectorAll("br").forEach((br) => br.remove());
+// }

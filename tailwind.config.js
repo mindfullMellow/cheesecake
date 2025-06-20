@@ -1,12 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  purge: ["index.html"],
-  media: false,
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    //overriding all  defualt styles
-
-    // adding my won styles to the tailwind classes
     extend: {
       fontFamily: {
         inter: ["inter", "sans-serif"],
@@ -16,11 +11,9 @@ export default {
         Recursive: ["Recursive", "sans-serif"],
         outfit: ["outfit", "sans-serif"],
       },
-
       backgroundImage: {
         "hero-bg": "url('/img/hero-background-color.png')",
       },
-
       colors: {
         "cheese-brown": {
           50: "#f9f7f1",
@@ -35,7 +28,6 @@ export default {
           900: "#59372e",
           950: "#321c16",
         },
-
         "cheese-cream": {
           50: "#fff8e1",
           100: "#fff2c0",
@@ -50,7 +42,6 @@ export default {
           950: "#451703",
         },
       },
-
       fontSize: {
         h1: "2.986rem",
         h2: "2.488rem",

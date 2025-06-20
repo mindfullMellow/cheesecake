@@ -111,8 +111,8 @@
   }
 
   .main-nav {
-    background-color: rgba(255, 248, 225, 0.98);
-    color: #6f4436;
+    background-color: rgba(255, 248, 225, 0.98) !important;
+    color: #6f4436 !important;
     position: absolute;
     top: 0;
     left: 0;

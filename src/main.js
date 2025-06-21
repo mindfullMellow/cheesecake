@@ -39,6 +39,7 @@ allLinks.forEach(function (link) {
 ///////////////////////////////////////////////////////////
 // Sticky navigation
 const sectionHeroEl = document.querySelector(".section-hero");
+const NavHeader = document.querySelector(".nav-header");
 console.log(sectionHeroEl);
 
 const obs = new IntersectionObserver(
@@ -52,6 +53,13 @@ const obs = new IntersectionObserver(
 
     if (ent.isIntersecting === true) {
       document.body.classList.remove("sticky");
+    }
+
+    if (
+      ent.isIntersecting === false &&
+      NavHeader.classList.contains("nav-open")
+    ) {
+      NavHeader.classList.remove("nav-open");
     }
   },
 

@@ -36,7 +36,7 @@
   top: 89%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30%;
+  width: 360px;
   z-index: 10;
   background-color: #fff8e1;
   border-radius: 16px;
@@ -46,11 +46,11 @@
 
 .error-modal {
   position: absolute;
-  top: 89%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20%;
-  z-index: 10;
+  width: 240px;
+  z-index: 9999;
   background-color: #fff8e1;
   border-radius: 16px;
 
@@ -161,4 +161,12 @@
     display: none;
   }
 
+}
+
+@media (max-width: 840px) {
+
+  .error-modal,
+  .correct-modal {
+    top: 93%;
+  }
 }

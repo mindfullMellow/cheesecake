@@ -20,6 +20,11 @@
   margin-top: 10px;
 }
 
+.sticky .nav-link.active {
+  background-color: #f9f7f1;
+  color: #6f4436;
+}
+
 /* modal class feature */
 .overlay {
   position: absolute;

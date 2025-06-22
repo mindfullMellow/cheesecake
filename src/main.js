@@ -55,6 +55,7 @@ const obs = new IntersectionObserver(
       document.body.classList.remove("sticky");
     }
 
+    // close the nav-open when user leaves it visible section
     if (
       ent.isIntersecting === false &&
       NavHeader.classList.contains("nav-open")
@@ -145,4 +146,26 @@ const NavHeaderEl = document.querySelector(".nav-header");
 
 btnNavEl.addEventListener("click", function () {
   NavHeaderEl.classList.toggle("nav-open");
+});
+
+////////////////////////////////////////////////////////////////////////
+//highlighting nav links as uusers scroll
+const sections = document.querySelectorAll("section, header");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (window.pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
 });

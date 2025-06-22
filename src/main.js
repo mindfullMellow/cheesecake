@@ -153,11 +153,12 @@ btnNavEl.addEventListener("click", function () {
 const sections = document.querySelectorAll("section, header");
 const navLinks = document.querySelectorAll(".nav-link");
 
-window.addEventListener("scroll", () => {
+function setActiveLink() {
   let current = "";
+
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (window.pageYOffset >= sectionTop - 100) {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 120 && rect.bottom > 120) {
       current = section.getAttribute("id");
     }
   });
@@ -167,5 +168,31 @@ window.addEventListener("scroll", () => {
     if (link.getAttribute("href") === `#${current}`) {
       link.classList.add("active");
     }
+  });
+}
+
+// Trigger on scroll
+window.addEventListener("scroll", setActiveLink);
+
+// Trigger immediately on link click (no delay)
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    requestAnimationFrame(setActiveLink); // Force update on next repaint
+  });
+});
+
+// Run once on page load
+setActiveLink();
+
+const nav = document.querySelector("nav");
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    nav.classList.add("hovering");
+  });
+
+  link.addEventListener("mouseleave", () => {
+    nav.classList.remove("hovering");
   });
 });

@@ -183,16 +183,3 @@ navLinks.forEach((link) => {
 
 // Run once on page load
 setActiveLink();
-
-const nav = document.querySelector("nav");
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    nav.classList.add("hovering");
-  });
-
-  link.addEventListener("mouseleave", () => {
-    nav.classList.remove("hovering");
-  });
-});

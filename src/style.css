@@ -120,9 +120,9 @@
     background-color: rgba(255, 248, 225, 0.98) !important;
     color: #6f4436 !important;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     height: 100vh !important;
     transform: translateX(100%);
     border-radius: none !important;

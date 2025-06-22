@@ -40,8 +40,9 @@ allLinks.forEach(function (link) {
 // Sticky navigation
 const sectionHeroEl = document.querySelector(".section-hero");
 const NavHeader = document.querySelector(".nav-header");
-console.log(sectionHeroEl);
+const mainNavEL = document.querySelector(".main-nav");
 
+//interesection observer for adding sticky class
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
@@ -72,7 +73,31 @@ const obs = new IntersectionObserver(
   }
 );
 
+// intersection observer for automatically closing nav-open
+const obsMainNav = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+
+    // close the nav-open when user leaves it visible section
+    if (
+      ent.isIntersecting === false &&
+      NavHeader.classList.contains("nav-open")
+    ) {
+      NavHeader.classList.remove("nav-open");
+    }
+  },
+
+  {
+    // in the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+
+// calling the intersection functions
 obs.observe(sectionHeroEl);
+obsMainNav.observe(mainNavEL);
 
 /////////////////////////////////////////
 //implementing the modal window with DOM
